@@ -1,19 +1,17 @@
 [dbserver]
-192.168.56.107
-192.168.56.112
+192.168.56.101
+192.168.56.103
 
 [webservers]
-192.168.56.108
-192.168.56.109
-192.168.56.112
+192.168.56.102
+192.168.56.103
 
 [fileservers]
-192.168.56.108 ansible_user=keirkeir
+192.168.56.102 ansible_user=keir ansible_ssh_private_key_file=~/.ssh/id_ed25519
 
-[workstation]
-192.168.56.108 apache_package=apache2 php_package=libapache2-mod-php
-192.168.56.109 apache_package=apache2 php_package=libapache2-mod-php
-192.168.56.112 apache_package=httpd php_package=php
+[workstations]
+192.168.56.101 apache_package=apache2 php_package=libapache2-mod-php
+192.168.56.102 apache_package=apache2 php_package=libapache2-mod-php
 
 [CentOS]
-192.168.56.112 ansible_user=keirkeir ansible_ssh_private_key_file=~/.ssh/ansible
+192.168.56.103 ansible_user=keir ansible_ssh_private_key_file=~/.ssh/ansible

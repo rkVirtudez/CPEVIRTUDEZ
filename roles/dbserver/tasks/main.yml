@@ -1,0 +1,25 @@
+  - name: Install MariaDB package (CentOS)
+    tags: centos, db,mariadb
+    dnf:
+      name: mariadb-server
+      state: present
+    when: ansible_distribution == "CentOS"
+
+  - name: "Mariadb - Restarting/Enabling"
+    service:
+      name: mariadb
+      state: restarted
+      enabled: true
+
+  - name: Install MariaDB package (Ubuntu)
+    tags: db, mariadb,ubuntu
+    apt:
+      name: mariadb-server
+      state: present
+    when: ansible_distribution == "Ubuntu"
+
+  - name: "MariaDB - Restarting/Enabling"
+    service:
+      name: mariadb
+      state: restarted
+      enabled: true
